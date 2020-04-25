@@ -1,3 +1,5 @@
+<!-- // page before blog  -->
+
 <?php 
   get_header();
   while(have_posts()) {
@@ -26,4 +28,5 @@
     </div>
 
   <?php }
+    get_footer();
 ?>

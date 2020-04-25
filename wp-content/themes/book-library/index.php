@@ -23,8 +23,15 @@
         </div>
 
         <div class="generic-content">
-          <?php the_excerpt(); ?>
-          <p><a class="btn btn--blue" href="<?php the_permalink(); ?>">Continue Reading &raquo;</a></p>
+          <div class="row group">
+            <div class="one-third">
+            <?php the_post_thumbnail('professorPortrait'); ?>
+            </div>
+            <div class="two-third">
+              <?php the_content(); ?>
+              <p><a class="btn btn--blue" href="<?php the_permalink(); ?>">Continue Reading &raquo;</a></p>
+            </div>
+          </div>
         </div>
       </div>
   <?php 

@@ -10,5 +10,26 @@
   function university_title_header() {
     register_nav_menu('headerMenuLocation', 'Header Menu Location');
     add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
+    add_image_size('bookLandscape', 400, 260, true);
+    add_image_size('professorPortrait', 480, 650, true);
   }
   add_action('after_setup_theme', 'university_title_header');
+
+  function university_adjust_queries($query) {
+    if (!is_admin() AND is_post_type_archive('event')) {
+      $today = date('Ymd');
+      $query->set('meta_key', 'event_date');
+      $query->set('orderby', 'meta_value_num');
+      $query->set('order', 'ASC');
+      $query->set('meta_query', array(
+        array(
+          'key' => 'event_date',
+          'compare' => '>=',
+          'value' => $today,
+          'type' => 'numeric'
+        )
+        ));
+    }
+  } 
+  add_action('pre_get_posts', 'university_adjust_queries');

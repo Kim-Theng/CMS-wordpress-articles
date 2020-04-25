@@ -23,10 +23,10 @@
 define( 'DB_NAME', 'learn_wordpress' );
 
 /** MySQL database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'oneclicks' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', 'not4you' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );
